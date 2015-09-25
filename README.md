@@ -2,7 +2,7 @@
 Three.js simple samples
 
 8 simple samples using three-js
-from Johannes Raida samples
+from Johannes Raida :
 
 http://www.johannes-raida.de/tutorials.htm
 
