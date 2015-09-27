@@ -143,17 +143,29 @@ http://localhost:8000/foo.html
 
         for (i = 0; i < num; i++){
           var squareGeometry = new THREE.Geometry();
-          squareGeometry.vertices.push(new THREE.Vector3(-1, -1, 0));
-          squareGeometry.vertices.push(new THREE.Vector3( 1, -1, 0));
-          squareGeometry.vertices.push(new THREE.Vector3( 1,  1, 0));
-          squareGeometry.vertices.push(new THREE.Vector3(-1,  1, 0));
-          squareGeometry.faces.push(new THREE.Face4(0, 1, 2, 3));
+
+          squareGeometry.vertices.push(new THREE.Vector3(-1, -1, 0.0));
+          squareGeometry.vertices.push(new THREE.Vector3( 1, -1, 0.0));
+          squareGeometry.vertices.push(new THREE.Vector3( 1,  1, 0.0));
+          squareGeometry.vertices.push(new THREE.Vector3(-1,  1, 0.0));
+
+          squareGeometry.faces.push(new THREE.Face3(0, 1, 2));
           squareGeometry.faceVertexUvs[0].push([
-            new THREE.Vector2(0.0, 0.0), //corrected for last version
-            new THREE.Vector2(1.0, 0.0),
-            new THREE.Vector2(1.0, 1.0),
-            new THREE.Vector2(0.0, 1.0)
+              new THREE.Vector2(0.0, 0.0), //corrected for last version
+              new THREE.Vector2(1.0, 0.0),
+              new THREE.Vector2(1.0, 1.0)
           ]);
+
+          
+
+          squareGeometry.faces.push(new THREE.Face3(0, 2, 3));
+          squareGeometry.faceVertexUvs[0].push([
+              new THREE.Vector2(0.0, 0.0), //corrected for last version
+              new THREE.Vector2(1.0, 1.0),
+              new THREE.Vector2(0.0, 1.0)
+          ]);
+
+          //gracias Adrián Termenón por arreglarlo!
 
           // Create a material, which contains the texture We use AdditiveBlending and
           // transparency:true so that the black areas of the star.jpg become transparent
